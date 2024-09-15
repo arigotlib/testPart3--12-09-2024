@@ -5,7 +5,7 @@ renderSolders()
 
 
 
-function renderSolders(soldersa = solders) {
+function renderSolders(abSoldersa = solders) {
   const tbody = document.querySelector("#mission_table tbody");
 
   tbody.textContent = "";
@@ -14,9 +14,9 @@ function renderSolders(soldersa = solders) {
     const tr = document.createElement("tr");
     
 
-    const fulName = document.createElement("td");
-    fulName.textContent = solder.fulName;
-    tr.appendChild(fulName);
+    const fullName = document.createElement("td");
+    fullName.textContent = solder.fullName;
+    tr.appendChild(fullName);
 
     
     const rank = document.createElement("td");
@@ -59,7 +59,7 @@ function renderSolders(soldersa = solders) {
 
 function deleteSolder(name){
     let index = solders.findIndex(solder => solder.fulName === name);
-    todos.splice(index, 1);
+    solders.splice(index, 1);
     saveSolders();
     renderSolders();
 }
@@ -69,13 +69,13 @@ function addPersonnel(event) {
   // פונקציה להוספת משימה
   debugger;
   const inputFullName = document.getElementById("inputFullName");
-  const inputRank = document.getElementById("intputRank");
+  const inputRank = document.getElementById("inputRank");
   const inputPosition = document.getElementById("inputPosition");
   const inputPlatoon = document.getElementById("inputPlatoon");
   const inputMissionTime = document.getElementById("inputMissionTime");
   const statusInput = document.getElementById("statusInput");
   const solder = {
-    fulName : inputFullName.value,
+    fullName : inputFullName.value,
     rank : inputRank.value,
     position : inputPosition.value,
     platoon : inputPlatoon.value,
